@@ -1,0 +1,24 @@
+﻿Identity => Sizin icin hazır yetkilendirme ve rol sisteminin veritabanına Microsoft tarafından dahil edilmesidir
+
+Entities
+************
+*Microsoft.AspNetCore.Identity => Identity işlemleri icin indirdigimiz bir kütüphanedir...BUrada dikkat edin Core olmayan bir Identity Package'ini referans almamalısınız...(Identity işlemleri icin kastettigimiz kullanıcı ekleme, login olma, signin olma , sifremi unuttum, mail gönderme)
+
+
+*Microsoft.Extensions.Identity.Stores => NetCore MVC'den ve EF'ten bagımsız bir katmanda COre Identity yapısı kullanılacaksa Identity kütüphanesinin yanında Stores kütüphanesinin de indirilmesi gereklidir...
+
+--------------------------------
+MAP(Entities katmanından referans alır)
+********
+*Microsoft.EntityFrameworkCore => EF işlemlerinin temeli bu kütüphaneden baslar...(IEntityTypeConfiguration Interface'i de bu kütüphanededir...)
+*Microsoft.EntityFrameworkCore.SqlServer => Core'da IEntityTypeConfiguration'in Sql server teknolojisi icin kullanılmasını saglayan ve implement edilmiş metotları bulunduran kütüphanedir (HasColumnName,HasColumnType)
+
+-------------------------------------
+
+DAL(MAP'ten referans alır dolayısıyla zincirleme olarak Core platfromunda Map'in icindeki ENTITIES de gelecegi icin ENTITIES'ten referans almak zorunda kalmayacagız)
+
+*Microsoft.EntityFrameworkCore => İhtiyacı vardır ama zaten Map'ten gelmektedir...
+*Microsoft.EntityFrameworkCore.SqlServer => İhtiyacı vardır ama Map'ten gelmektedir...
+*Microsoft.EntityFrameworkCore.Tools => Migration işlemlerini terminalden yapmak icin Tools kütüphanesine ihtiyacı vardır...
+*Microsoft.EntityFrameworkCore.Proxies => LazyLoading işlemlerinin acılabilmesi icin
+*Microsoft.AspNetCore.Identity.EntityFrameworkCore => Sizin Context sınıfınız eger siz Identity kullanıyorsanız eskisi gibi DbContext'ten miras alamaz... Burada miras almanız gerkeen sınıf IdentityDbContext class'ından miras almalıdır...O class da bu kütüphanededir...
