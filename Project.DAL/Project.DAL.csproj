@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Project.MAP\Project.MAP.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\Concretes\" />
-  </ItemGroup>
-
 </Project>

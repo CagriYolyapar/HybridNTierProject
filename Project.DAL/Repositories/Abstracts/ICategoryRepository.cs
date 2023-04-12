@@ -9,7 +9,7 @@ namespace Project.DAL.Repositories.Abstracts
 {
     public interface ICategoryRepository:IRepository<Category>
     {
-        void SpecialCategoryCreation(); //Kategori eklendiginde default en az 3 eklesin...
+        void SpecialCategoryCreation(Category category); //Kategori eklendiginde default en az 3 Urun eklesin...
         
     }
 }

@@ -32,7 +32,7 @@ namespace Project.DAL.Repositories.Abstracts
         bool Any(Expression<Func<T, bool>> exp);
         T FirstOrDefault(Expression<Func<T, bool>> exp);    
         object Select(Expression<Func<T, bool>> exp);
-        IQueryable<X> Select<X>(Expression<Func<T, bool>> exp);
+        IQueryable<X> Select<X>(Expression<Func<T, X>> exp);
 
         //Find Command
         T Find(int id);
