@@ -15,7 +15,7 @@ namespace Project.BLL.ManagerServices.Concretes
 
         public CategoryManager(ICategoryRepository crep):base(crep)
         {
-
+            _cRep = crep;
         }
 
     }

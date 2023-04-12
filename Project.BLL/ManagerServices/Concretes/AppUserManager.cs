@@ -14,7 +14,7 @@ namespace Project.BLL.ManagerServices.Concretes
         IAppUserRepository _appRep;
         public AppUserManager(IAppUserRepository ap):base(ap)
         {
-        
+            _appRep = ap;
         }
 
         public  async Task<bool> AddUser(AppUser item)
