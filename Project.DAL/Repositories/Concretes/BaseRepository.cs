@@ -20,6 +20,13 @@ namespace Project.DAL.Repositories.Concretes
 
         public BaseRepository(MyContext db)
         {
+
+            string a = "asadasd";
+
+
+           
+
+
             _db = db;
         }
         protected void Save()
