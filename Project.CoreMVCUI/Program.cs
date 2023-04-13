@@ -1,7 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+using Project.BLL.ServiceInjections;
+using Project.DAL.Context;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContextService();
+builder.Services.AddIdentityServices();
+builder.Services.AddRepManServices();
+
+
+
+
+
 
 var app = builder.Build();
 

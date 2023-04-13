@@ -42,3 +42,13 @@ BLL(DAL'den referans alır)
 *Microsoft.EntityFrameworkCore.SqlServer => İhtiyacı vardır ama zaten DAL'den gelmektedir...Service INjection yapılırken Options'un UseSqlServer metodunu kullanması gerekir o yüzden ihtiyacı vardır...
 *Microsoft.AspNetCore.Identity => İhtiyacı vardır ama zincirleme referans olarak gelir...Identity servicelerini inject etmek icin (Dependency Injection'a bildirmek icin ihtiyacı vardır)
 *System.Configuration.ConfigurationManager => Mevcut calısan projenin configuration'inina baska katmanlardan ulasabilmek icin indirmeni gereken küütüphanedir...
+
+
+------------------------
+
+
+UI(BLL'den) --Email vs sınıflarınız varsa oradan referans almak zorunda olacaktır
+**********
+*Microsoft.EntityFrameworkCore(chain reference olarak gelir)
+*Microsoft.EntityFrameworkCore.SqlServer(chain reference olarak gelir)
+*Microsoft.EntityFrameworkCore.Design => Migration icin Tools kütüphanesini DAL'den ekleyerek ayrı bir katmanda terminal işlemleri yaptıgımızdan dolayı o Tools'a destek verebilmesi icin UI'a bu Design kütüphanesinin indirilmesi gerekir...

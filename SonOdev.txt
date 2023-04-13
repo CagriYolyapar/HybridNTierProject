@@ -1,0 +1,1 @@
+﻿Manager kullanarak bir Admin Panaeli icin Category Ve Product işlemlerini yapınız
