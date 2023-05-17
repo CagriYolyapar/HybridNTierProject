@@ -20,6 +20,9 @@ namespace Project.CoreMVCUI.Controllers
 
         public IActionResult Privacy()
         {
+           
+
+           
             return View();
         }
 
